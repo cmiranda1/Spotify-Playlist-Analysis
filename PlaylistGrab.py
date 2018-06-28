@@ -12,14 +12,14 @@ sns.set(color_codes=True)
 
 #Create Login Token and Retrieve Playlist Info
 #----------------------------------------------------------------------------------------------------------------------
-client_id = 'YourClientID'
+client_id = 'YourClientID' #Client ID and Client Secret can both be retrieved from the Spotify API
 client_secret = 'YourClientSecret'
 credentials = oauth2.SpotifyClientCredentials(client_id=client_id,client_secret=client_secret)
 
 token = credentials.get_access_token()
 sp = spotipy.Spotify(auth=token)
 
-playlist_uri = 'PlaylistURI'
+playlist_uri = 'PlaylistURI' #Playlist uri can be retrieved from the share tab on a spotify playlist
 username = playlist_uri.split(':')[2]
 playlist = playlist_uri.split(':')[4]
 tracks = []
